@@ -1,0 +1,13 @@
+azure-ai-inference[prompts]
+azure-ai-projects==1.0.0b5
+azure-identity==1.19.0
+matplotlib-inline==0.1.7
+numpy==2.2.2
+python-dotenv==1.0.1
+semantic-kernel==1.19.0
+requests==2.31.0
+azure-search-documents
+pandas
+opentelemetry-api
+azure-monitor-opentelemetry
+azure-ai-evaluation[remote]
