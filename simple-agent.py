@@ -64,8 +64,6 @@ with project_client:
     "Responde la pregunta calculando el valor en cada mes utilizando la función proporcionada. " \
     "Luego, genera un reporte donde expliques el razonamiento, muestra la evolución del valor mes a mes en una tabla y guárdalo en el archivo reporte-producto.md. " \
     "Finalmente, genera una gráfica de línea donde muestres cómo va evolucionando el valor del producto mes a mes en el plazo utilizado, guárdala como costo-producto.png." \
-    
-
 
     # 04e - Enviar el mensaje al agente en el hilo de conversación
     user_message = project_client.agents.create_message(
@@ -97,18 +95,14 @@ with project_client:
                 if content.get('type') == 'text':
                     print(f"    Agente: {content['text']['value']}")
 
-    # 04h - Mostrar la gráfica generada por el agente
+    # 04h - Guardar los archivos generados por el agente
     for file_path_annotation in messages.file_path_annotations:
         file_name = Path(file_path_annotation.text).name
         project_client.agents.save_file(
             file_id=file_path_annotation.file_path.file_id, 
             file_name=file_name)
-        print(f"Imagen guardada en: {Path.cwd() / file_name}")
+        print(f"Archivo guardado en: {Path.cwd() / file_name}")
     
     # 04i - Eliminar el agente
     project_client.agents.delete_agent(product_agent.id)
     print("Agente eliminado.")    
-
-
-
-
