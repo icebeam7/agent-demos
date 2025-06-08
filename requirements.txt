@@ -11,3 +11,6 @@ pandas
 opentelemetry-api
 azure-monitor-opentelemetry
 azure-ai-evaluation[remote]
+
+# Nueva librería para agentes de Azure (sin hub)
+azure-ai-agents
